@@ -8,7 +8,9 @@ export default function Home() {
       <Navbar />
 
       <section className="flex flex-col items-center justify-center py-20">
-        <h1 className="text-6xl font-bold mb-4">Metaverse Development</h1>
+        <h1 className="text-7xl font-bold mb-4">
+          <span className="text-blue-400">Metaverse</span> Development
+        </h1>
         <p className="text-center max-w-xl text-lg">
           Explore tools, scope, and futuristic possibilities in the Metaverse world.
         </p>
