@@ -1,14 +1,44 @@
 "use client";
+import { useEffect, useState } from "react";
 
 export default function Navbar() {
-    return (
-      <nav className="w-full bg-gray-900 text-white px-6 py-4 flex justify-between items-center shadow">
-        <h2 className="text-xl font-semibold">Metaverse Blog</h2>
-        <ul className="flex gap-6">
-          <li><a href="#tools" className="hover:text-blue-400">Tools</a></li>
-          <li><a href="#scope" className="hover:text-blue-400">Scope</a></li>
-          <li><a href="#future" className="hover:text-blue-400">Future</a></li>
-        </ul>
-      </nav>
-    );
-  }
+    const [isScrolled, setIsScrolled] = useState(false);
+
+    useEffect(() => {
+      const handleScroll = () => {
+        setIsScrolled(window.scrollY > 10);
+      };
+    
+      window.addEventListener("scroll", handleScroll);
+      return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
+
+  return (
+    <nav
+      className={`w-full fixed z-50 px-6 py-4 flex justify-between items-center backdrop-blur-md transition-all duration-300 ${
+        isScrolled
+          ? "bg-gray-900/80 shadow-md top-5 rounded-2xl"
+          : "bg-transparent top-0"
+      }`}
+    >
+      <h2 className="text-xl font-semibold">Metaverse Develoment</h2>
+      <ul className="flex gap-6 text-sm sm:text-base">
+        <li>
+          <a href="#tools" className="hover:text-blue-400">
+            Tools
+          </a>
+        </li>
+        <li>
+          <a href="#scope" className="hover:text-blue-400">
+            Scope
+          </a>
+        </li>
+        <li>
+          <a href="#start" className="hover:text-blue-400">
+            Getting Started
+          </a>
+        </li>
+      </ul>
+    </nav>
+  );
+}
