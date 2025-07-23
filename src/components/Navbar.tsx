@@ -17,7 +17,7 @@ export default function Navbar() {
     <nav
       className={`w-full fixed z-50 px-6 py-4 flex justify-between items-center backdrop-blur-md transition-all duration-300 ${
         isScrolled
-          ? "bg-gray-900/80 shadow-md top-5 rounded-2xl"
+          ? "bg-gray-600/80 shadow-md top-5 rounded-2xl"
           : "bg-transparent top-0"
       }`}
     >

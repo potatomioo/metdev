@@ -9,19 +9,26 @@ export default function Home() {
 
       <section className="flex flex-col items-center justify-center py-20">
         <h1 className="text-7xl font-bold mb-4">
-          <span className="text-blue-400">Metaverse</span> Development
+          <span className="text-blue-400">Metaverse </span>VR Starter Kit
         </h1>
         <p className="text-center max-w-xl text-lg">
-          Explore tools, scope, and futuristic possibilities in the Metaverse world.
+          Kickstart Your VR Journey in Minutes — Drag, Drop, and Develop for Meta Quest with Ease
         </p>
+        <a
+          href="/OculusBase.unitypackage"
+          download
+          className="mt-8 inline-block px-8 py-4 bg-blue-500 hover:bg-blue-600 text-white text-2xl font-bold rounded-lg shadow-lg transition-colors"
+        >
+          Download Package
+        </a>
       </section>
 
-      <Section id="tools" title="Essential Tools for Metaverse Dev">
+      <Section id="tools" title="Essential Tools to Kickstart">
         <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 gap-10">
           {tools.map((tool) => (
             <div
               key={tool.name}
-              className="bg-gray-800 p-4 rounded-lg hover:scale-105 transition-transform"
+              className="bg-gray-800 p-4 rounded-lg hover:scale-105 hover:border-2 transition-transform"
             >
               <h3 className="text-xl font-semibold mb-2">{tool.name}</h3>
               <p className="text-gray-300">{tool.desc}</p>
