@@ -1,7 +1,8 @@
-export let tools = [
-    { name: "Unity", desc: "The core engine for building your VR worlds." },
-    { name: "C#", desc: "The programming language for scripting interactions and logic." },
-    { name: "Blender: (Optional) ", desc: "For designing and importing custom 3D objects into your VR scenes." },
+export let features = [
+    { name: "OpenXR Integration", desc: "Ensures your project is future-proof and compatible with multiple VR platforms." },
+    { name: "Oculus Support", desc: "Optimized for Oculus devices Meta Quest, etc." },
+    { name: "Simulator Included (Optional) ", desc: "Test your VR app in the Unity Editor—no need to deploy to a headset every time." },
+    { name: "Hand Animations & Gestures", desc: "Pre-configured hand models with interactive gestures and click support."}
   ];
   
 export let scope = [
@@ -10,3 +11,9 @@ export let scope = [
     "Remote Collaboration",
     "AR/VR Training Simulations",
   ];
+
+export let ease = [
+  { name: "Drag & Drop Simplicity", desc: "Just download the .unitypackage, drag it into your Unity project, and you’re ready to go—no complex setup required."},
+  { name: "No Advanced Knowledge Needed", desc: "Beginners can get started in minutes; all essential VR components are pre-configured."},
+  { name: "Instant Testing", desc: "Use the built-in simulator to test interactions without a headset."}
+];

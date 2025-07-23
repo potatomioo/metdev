@@ -24,8 +24,8 @@ export default function Navbar() {
       <h2 className="text-xl font-semibold">Metaverse Develoment</h2>
       <ul className="flex gap-6 text-sm sm:text-base">
         <li>
-          <a href="#tools" className="hover:text-blue-400">
-            Tools
+          <a href="#features" className="hover:text-blue-400">
+            Features
           </a>
         </li>
         <li>

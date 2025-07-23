@@ -1,6 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Section from "@/components/Section";
-import { tools, scope } from "@/data/content";
+import { features, scope, ease} from "@/data/content";
 
 export default function Home() {
   return (
@@ -12,46 +12,45 @@ export default function Home() {
           <span className="text-blue-400">Metaverse </span>VR Starter Kit
         </h1>
         <p className="text-center max-w-xl text-lg">
-          Kickstart Your VR Journey in Minutes — Drag, Drop, and Develop for Meta Quest with Ease
+          Kickstart Your VR Journey in Minutes — Drag, Drop, and Develop for Oculus based VR projects with ease.
         </p>
         <a
           href="/OculusBase.unitypackage"
           download
-          className="mt-8 inline-block px-8 py-4 bg-blue-500 hover:bg-blue-600 text-white text-2xl font-bold rounded-lg shadow-lg transition-colors"
+          className="mt-8 inline-block px-8 py-4 bg-blue-500 text-white text-2xl font-bold rounded-lg shadow-lg transition-colors 
+          hover:bg-white hover:text-blue-500 hover:scale-105"
         >
           Download Package
         </a>
       </section>
 
-      <Section id="tools" title="Essential Tools to Kickstart">
+      <Section id="features" title="Key Features">
         <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 gap-10">
-          {tools.map((tool) => (
+          {features.map((feature) => (
             <div
-              key={tool.name}
+              key={feature.name}
               className="bg-gray-800 p-4 rounded-lg hover:scale-105 hover:border-2 transition-transform"
             >
-              <h3 className="text-xl font-semibold mb-2">{tool.name}</h3>
-              <p className="text-gray-300">{tool.desc}</p>
+              <h3 className="text-xl font-semibold mb-2">{feature.name}</h3>
+              <p className="text-gray-300">{feature.desc}</p>
             </div>
           ))}
         </div>
       </Section>
-      <Section id="start" title="Getting Started with Metaverse Dev">
-        <p className="text-gray-300 mb-4">
-          To kickstart your Metaverse journey, start with a base project setup:
-        </p>
-        <div className="bg-gray-800 rounded-lg p-6">
-          <h3 className="text-xl font-semibold mb-2">Unity + Oculus Quest Base Project</h3>
-          <ul className="list-disc pl-5 space-y-2 text-gray-300">
-            <li>Unity LTS version installed</li>
-            <li>Oculus Integration package from Asset Store</li>
-            <li>XR Plugin Management → Meta XR plugin</li>
-            <li>Set up Android Build settings for Quest 2</li>
-            <li>Ensure developer mode is enabled on your headset</li>
-          </ul>
+      <Section id="start" title="How Easy Is It?">
+      <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 gap-10">
+          {ease.map((ease) => (
+            <div
+              key={ease.name}
+              className="bg-blue-500 p-4 rounded-lg hover:scale-105 hover:border-2 transition-transform"
+            >
+              <h3 className="text-xl font-semibold mb-2">{ease.name}</h3>
+              <p className="text-gray-300">{ease.desc}</p>
+            </div>
+          ))}
         </div>
       </Section>
-      <Section id="scope" title="Scope of Metaverse">
+      <Section id="scope" title="Getting Started (Quick Start)">
         <ul className="list-disc pl-6 space-y-2 text-gray-300">
           {scope.map((item, index) => (
             <li key={index}>{item}</li>
