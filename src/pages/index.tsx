@@ -1,6 +1,9 @@
 import Navbar from "@/components/Navbar";
 import Section from "@/components/Section";
-import { features, scope, ease } from "@/data/content";
+import { features, scope, ease, roadmapSteps } from "@/data/content";
+import RoadmapCard from "@/components/RoadmapCard";
+import React from "react";
+
 
 export default function Home() {
   return (
@@ -25,11 +28,11 @@ export default function Home() {
       </section>
 
       <Section id="features" title="Key Features">
-        <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 gap-5">
+        <div className="mt-10 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 gap-5">
           {features.map((feature) => (
             <div
               key={feature.name}
-              className="bg-gray-900 p-4 rounded-lg hover:scale-101 hover:border-2 transition-transform"
+              className="bg-gray-900 p-4 rounded-lg hover:scale-101 transition-transform"
             >
               <h3 className="text-xl font-semibold mb-2">{feature.name}</h3>
               <p className="text-gray-300">{feature.desc}</p>
@@ -37,25 +40,34 @@ export default function Home() {
           ))}
         </div>
       </Section>
+      <div className="bg-gray-900 w-full pt-8 pb-0">
+        <Section id="scope" title="Getting Started (Quick Start)">
+          <div className="flex flex-col items-center mt-10 gap-0">
+            {roadmapSteps.map((step, idx) => (
+              <React.Fragment key={step.title}>
+                <RoadmapCard step={idx + 1} title={step.title} desc={step.desc} />
+                {idx < roadmapSteps.length - 1 && (
+                  <svg className="w-8 h-8 text-blue-400 my-2" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                  </svg>
+                )}
+              </React.Fragment>
+            ))}
+          </div>
+        </Section>
+      </div>
       <Section id="start" title="How Easy Is It?">
-        <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 gap-12 ">
+        <div className="mt-10 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 gap-12 ">
           {ease.map((ease) => (
             <div
               key={ease.name}
-              className="bg-gray-900 p-4 rounded-lg hover:scale-105 hover:border-2 transition-transform"
+              className="bg-gray-900 p-6 rounded-lg hover:scale-104 transition-transform hover:shadow-xl"
             >
               <h3 className="text-xl font-semibold mb-2">{ease.name}</h3>
               <p className="text-gray-300">{ease.desc}</p>
             </div>
           ))}
         </div>
-      </Section>
-      <Section id="scope" title="Getting Started (Quick Start)">
-        <ul className="list-disc pl-6 space-y-2 text-gray-300">
-          {scope.map((item, index) => (
-            <li key={index}>{item}</li>
-          ))}
-        </ul>
       </Section>
       <footer className="mt-20 py-10 bg-gray-900 flex flex-col items-center border-t border-gray-800 w-full">
         <h2 className="text-2xl font-bold mb-2">Reach Us</h2>

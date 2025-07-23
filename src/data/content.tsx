@@ -18,3 +18,26 @@ export let ease = [
   { name: "No Advanced Knowledge Needed", desc: "Beginners can get started in minutes; all essential VR components are pre-configured."},
   { name: "Instant Testing", desc: "Use the built-in simulator to test interactions without a headset."}
 ];
+
+export let roadmapSteps = [
+  {
+    title: "Create Unity Project",
+    desc: "Start a new 3D Core project in Unity.",
+  },
+  {
+    title: "Download Package",
+    desc: "Get the .unitypackage file from above.",
+  },
+  {
+    title: "Import Package",
+    desc: "Drag & drop the package into Assets and import all.",
+  },
+  {
+    title: "Open Example Scene",
+    desc: "Explore the included demo scene for a quick start.",
+  },
+  {
+    title: "Hit Play",
+    desc: "Test VR in the editor or on your Oculus device.",
+  },
+];
