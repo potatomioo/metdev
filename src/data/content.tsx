@@ -6,10 +6,11 @@ export let features = [
   ];
   
 export let scope = [
-    "Virtual Real Estate",
-    "Metaverse Gaming",
-    "Remote Collaboration",
-    "AR/VR Training Simulations",
+    "Download the Package:",
+    "Open your Unity project (3D Core)",
+    "Go to Assets > Import Package > Custom Package...",
+    "Select the downloaded .unitypackage and import all assets.",
+    "Start Developing"
   ];
 
 export let ease = [

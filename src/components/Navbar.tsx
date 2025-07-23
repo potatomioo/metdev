@@ -34,7 +34,7 @@ export default function Navbar() {
           </a>
         </li>
         <li>
-          <a href="#start" className="hover:text-blue-400">
+          <a href="#start" className="hover:text-blue-400 hover:border-blue-500 border border-white rounded-full px-4 py-2 ml-2 transition-colors">
             Getting Started
           </a>
         </li>
