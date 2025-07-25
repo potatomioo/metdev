@@ -4,7 +4,7 @@ interface RoadmapCardProps {
   desc: string;
 }
 
-let RoadmapCard: React.FC<RoadmapCardProps> = ({ step, title, desc }) => (
+const RoadmapCard: React.FC<RoadmapCardProps> = ({ step, title, desc }) => (
   <div className="bg-gray-800 p-6 rounded-xl shadow-lg flex flex-col items-center min-w-[220px]">
     <div className="bg-blue-500 text-white rounded-full w-10 h-10 flex items-center justify-center text-xl font-bold mb-2">
       {step}

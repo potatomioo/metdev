@@ -11,17 +11,19 @@ export default function Home() {
       <Navbar />
 
       <section className="flex flex-col items-center justify-center py-20">
-        <h1 className="text-7xl font-bold mb-4">
+        <h1 className="text-7xl font-bold mb-4 text-center">
           <span className="text-blue-400">Metaverse </span>VR Starter Kit
+          <br />
+          <span >for Unity</span>
         </h1>
         <p className="text-center max-w-xl text-lg">
-          Kickstart Your VR Journey in Minutes — Drag, Drop, and Develop for Oculus based VR projects with ease.
+          Kickstart Your VR Journey in Minutes — Drag, Drop, and Develop for Oculus based VR projects in Unity with ease.
         </p>
         <a
           href="/OculusBase.unitypackage"
           download
           className="mt-16 inline-block px-8 py-4 bg-transparent border-2 text-white text-2xl font-bold rounded-lg shadow-lg transition-colors 
-          hover:scale-105 hover:bg-blue-900"
+          hover:scale-105 hover:bg-blue-900 text-center"
         >
           Download Package
         </a>
@@ -41,7 +43,7 @@ export default function Home() {
         </div>
       </Section>
       <div className="bg-gray-900 w-full pt-8 pb-0">
-        <Section id="scope" title="Getting Started (Quick Start)">
+        <Section id="start" title="Getting Started (Quick Start)">
           <div className="flex flex-col items-center mt-10 gap-0">
             {roadmapSteps.map((step, idx) => (
               <React.Fragment key={step.title}>
@@ -56,7 +58,7 @@ export default function Home() {
           </div>
         </Section>
       </div>
-      <Section id="start" title="How Easy Is It?">
+      <Section id="ease" title="How Easy Is It?">
         <div className="mt-10 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 gap-12 ">
           {ease.map((ease) => (
             <div
@@ -72,7 +74,7 @@ export default function Home() {
       <footer className="mt-20 py-10 bg-gray-900 flex flex-col items-center border-t border-gray-800 w-full">
         <h2 className="text-2xl font-bold mb-2">Reach Us</h2>
         <p className="text-gray-400 mb-6 text-center max-w-md">
-          Have questions, feedback, or need support? We're here to help! Connect with us anytime.
+          Have questions, feedback, or need support? We are here to help! Connect with us anytime.
         </p>
         <div className="flex space-x-8">
           <a
