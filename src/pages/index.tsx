@@ -1,18 +1,26 @@
 import Navbar from "@/components/Navbar";
 import Section from "@/components/Section";
 import { features, scope, ease, roadmapSteps } from "@/data/content";
-import RoadmapCard from "@/components/RoadmapCard";
+import RoadmapCarousel from "@/components/RoadmapCarousel";
 import React from "react";
 
 
 export default function Home() {
-  return (
-    <main className="pt-20 min-h-screen bg-gray-950 text-white">
-      <Navbar />
+  const backgroundStyle = {
+    background: `
+      radial-gradient(circle at 30% 20%, rgba(206, 108, 238, 0.3) 0%, transparent 50%),
+      radial-gradient(circle at 70% 80%, rgba(242, 155, 255, 0.2) 0%, transparent 50%),
+      linear-gradient(135deg,rgb(2, 3, 5) 0%,rgb(0, 0, 0) 50%,rgb(8, 9, 10) 100%)
+    `
+  };
 
+
+  return (
+    <main className="pt-20 min-h-screen bg-gray-950 text-white" style={backgroundStyle}>
+      <Navbar />
       <section className="flex flex-col items-center justify-center py-20">
         <h1 className="text-7xl font-bold mb-4 text-center">
-          <span className="text-blue-400">Metaverse </span>VR Starter Kit
+          <span className="text-violet-400">Metaverse </span>VR Starter Kit
           <br />
           <span >for Unity</span>
         </h1>
@@ -22,42 +30,68 @@ export default function Home() {
         <a
           href="/OculusBase.unitypackage"
           download
-          className="mt-16 inline-block px-8 py-4 bg-transparent border-2 text-white text-2xl font-bold rounded-lg shadow-lg transition-colors 
-          hover:scale-105 hover:bg-blue-900 text-center"
+          // className="mt-16 inline-block px-8 py-4 bg-white text-black text-2xl font-bold rounded-lg shadow-lg transition-colors
+          //  hover:bg-gray-400 text-center"
+          className="mt-16 inline-block px-6 py-3 bg-white text-black text-lg font-bold rounded-lg shadow-lg transition-colors hover:bg-violet-200 text-center"
         >
           Download Package
         </a>
       </section>
 
+
+      {/* <div className="bg-gray-900 w-full pt-8 pb-0"> */}
+      <Section id="start" title="Getting Started (Quick Start)">
+        <div className="flex flex-col items-center mt-10 gap-0">
+          <RoadmapCarousel steps={roadmapSteps} />
+        </div>
+      </Section>
+
       <Section id="features" title="Key Features">
-        <div className="mt-10 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 gap-5">
-          {features.map((feature) => (
+        <div className="mt-10 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 gap-6">
+          {features.map((feature, index) => (
             <div
-              key={feature.name}
-              className="bg-gray-900 p-4 rounded-lg hover:scale-101 transition-transform"
+              key={index}
+              className="group relative bg-gray-900 rounded-xl overflow-hidden border border-gray-700 hover:border-gray-600 transition-all duration-300 cursor-pointer"
             >
-              <h3 className="text-xl font-semibold mb-2">{feature.name}</h3>
-              <p className="text-gray-300">{feature.desc}</p>
+              {/* Image Container with Zoom Effect */}
+              <div className="relative h-48 overflow-hidden bg-gray-800">
+                <img
+                  src={feature.image} // Make sure your feature object has an image property
+                  alt={feature.name}
+                  className="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-110"
+                  onError={(e) => {
+                    // Fallback for broken images
+                    const target = e.target;`
+                <div class="w-full h-full bg-gray-800 flex items-center justify-center">
+                  <div class="text-center text-gray-500">
+                    <svg class="w-12 h-12 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                    </svg>
+                    <p class="text-sm">${feature.name}</p>
+                  </div>
+                </div>
+              `;
+                  }}
+                />
+
+                {/* Subtle overlay on hover */}
+                <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              </div>
+
+              {/* Content Section */}
+              <div className="p-6">
+                <h3 className="text-xl font-semibold text-white mb-3 group-hover:text-violet-400 transition-colors duration-300">
+                  {feature.name}
+                </h3>
+                <p className="text-gray-400 text-sm leading-relaxed">
+                  {feature.desc}
+                </p>
+              </div>
             </div>
           ))}
         </div>
       </Section>
-      <div className="bg-gray-900 w-full pt-8 pb-0">
-        <Section id="start" title="Getting Started (Quick Start)">
-          <div className="flex flex-col items-center mt-10 gap-0">
-            {roadmapSteps.map((step, idx) => (
-              <React.Fragment key={step.title}>
-                <RoadmapCard step={idx + 1} title={step.title} desc={step.desc} />
-                {idx < roadmapSteps.length - 1 && (
-                  <svg className="w-8 h-8 text-blue-400 my-2" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-                  </svg>
-                )}
-              </React.Fragment>
-            ))}
-          </div>
-        </Section>
-      </div>
+      {/* </div> */}
       <Section id="ease" title="How Easy Is It?">
         <div className="mt-10 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 gap-12 ">
           {ease.map((ease) => (
@@ -79,7 +113,7 @@ export default function Home() {
         <div className="flex space-x-8">
           <a
             href="mailto:deeptanshushuklaji@email.com"
-            className="flex items-center text-blue-400 hover:underline text-lg"
+            className="flex items-center text-violet-400 hover:underline text-lg"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -90,7 +124,7 @@ export default function Home() {
           </a>
           <a
             href="https://twitter.com/potatomiooo"
-            className="flex items-center text-blue-400 hover:underline text-lg"
+            className="flex items-center text-violet-400 hover:underline text-lg"
             target="_blank"
             rel="noopener noreferrer"
           >

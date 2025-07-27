@@ -17,24 +17,19 @@ export default function Navbar() {
     <nav
       className={`w-full fixed z-50 px-6 py-4 flex justify-between items-center backdrop-blur-md transition-all duration-300 ${
         isScrolled
-          ? "bg-gray-600/80 shadow-md top-5 rounded-2xl"
+          ? "bg-gray-600/50 shadow-md top-5 rounded-2xl"
           : "bg-transparent top-0"
       }`}
     >
-      <h2 className="text-xl font-semibold">Metaverse Develoment</h2>
+      <h2 className="text-xl font-semibold">MetDev</h2>
       <ul className="flex gap-6 text-sm sm:text-base">
         <li>
-          <a href="#features" className="hover:text-blue-400">
+          <a href="#features" className="hover:text-violet-400">
             Features
           </a>
         </li>
         <li>
-          <a href="#scope" className="hover:text-blue-400">
-            Scope
-          </a>
-        </li>
-        <li>
-          <a href="#start" className="hover:text-blue-400 hover:border-blue-500 border border-white rounded-full px-4 py-2 ml-2 transition-colors">
+          <a href="#start" className="hover:text-violet-400 hover:border-violet-500 border border-white rounded-full px-4 py-2 ml-2 transition-colors">
             Getting Started
           </a>
         </li>
