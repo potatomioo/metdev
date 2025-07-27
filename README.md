@@ -2,7 +2,7 @@
 
 A plug-and-play Unity package that simplifies VR development for using **OpenXR** and **Oculus Quest**. This starter kit is designed to get you up and running quickly — with essential configurations, hand interaction support, and a simulator — so you can focus on building.
 
-🔗 **Try it Live**: [https://metaverse-vr-starter.vercel.app](https://metaverse-vr-starter.vercel.app)
+🔗 **Try it Live**: [https://unity-vr-starterkit.vercel.app](https://unity-vr-starterkit.vercel.app/)
 
 ---
 
@@ -12,7 +12,7 @@ A plug-and-play Unity package that simplifies VR development for using **OpenXR*
 ## 🛠️ Unity Setup (How to Use)
 
 1. Download the `.unitypackage` from the web app:  
-   👉 [https://metaverse-vr-starter.vercel.app](https://metaverse-vr-starter.vercel.app)
+   👉 [https://unity-vr-starterkit.vercel.app](https://unity-vr-starterkit.vercel.app/)
 
 2. Open your Unity project.
 
