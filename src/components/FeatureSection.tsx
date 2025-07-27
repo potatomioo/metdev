@@ -9,7 +9,20 @@ interface Feature {
   
   const FeatureCard: React.FC<{ feature: Feature }> = ({ feature }) => {
     return (
-      <div className="group relative bg-gray-900 rounded-xl overflow-hidden border border-gray-700 hover:border-gray-600 transition-all duration-300 cursor-pointer">
+      <div className="group relative bg-gray-900 rounded-xl overflow-hidden border border-gray-700 hover:border-gray-600 transition-all duration-300 cursor-pointer transform-gpu will-change-transform"
+           onMouseEnter={(e) => {
+             const img = e.currentTarget.querySelector('img');
+             if (img) {
+               img.style.transform = 'scale(1.1)';
+             }
+           }}
+           onMouseLeave={(e) => {
+             const img = e.currentTarget.querySelector('img');
+             if (img) {
+               img.style.transform = 'scale(1)';
+             }
+           }}
+      >
         
         {/* Image Container with Zoom Effect */}
         <div className="relative h-48 overflow-hidden bg-gray-800">
