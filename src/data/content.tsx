@@ -1,10 +1,3 @@
-export const features = [
-    { name: "OpenXR Integration", desc: "Ensures your project is future-proof and compatible with multiple VR platforms." },
-    { name: "Oculus Support", desc: "Optimized for Oculus devices Meta Quest, etc." },
-    { name: "Simulator Included (Optional) ", desc: "Test your VR app in the Unity Editor—no need to deploy to a headset every time." },
-    { name: "Hand Animations & Gestures", desc: "Pre-configured hand models with interactive gestures and click support."}
-  ];
-  
 export const scope = [
     "Download the Package:",
     "Open your Unity project (3D Core)",
@@ -21,23 +14,51 @@ export const ease = [
 
 export const roadmapSteps = [
   {
+    step: 1,
     title: "Create Unity Project",
     desc: "Start a new 3D Core project in Unity.",
+    image: "/Step1.png" // Make sure this matches your actual file name exactly
   },
   {
-    title: "Download Package",
-    desc: "Get the .unitypackage file from above.",
+    step: 2,
+    title: "Setup Scene",
+    desc: "Install XR Interaction Toolkit",
+    image: "/Step2.png" // Add your actual PNG file name
   },
   {
-    title: "Import Package",
-    desc: "Drag & drop the package into Assets and import all.",
+    step: 3,
+    title: "Import this package",
+    desc: "Use pre-built interaction scripts for grabbing, teleporting, and UI interactions.",
+   image: "/Step3.png" // Add your actual PNG file name
   },
   {
+    step: 4,
     title: "Open OculusBase Scene",
-    desc: "Explore the included demo scene for a quick start.",
+    desc: "Explore the included Oculusbase scene for a quick start.",
+    image: "/Step4.png" // Add your actual PNG file name
   },
   {
+    step: 5,
     title: "Hit Play",
-    desc: "Test VR in the editor or on your Oculus device.",
+    desc: "Test VR through the simulator or on your Oculus device with Optimized settings.",
+    image: "/Step3.png" // Add your actual PNG file name
+  }
+];
+
+export const features = [
+  {
+    name: "OpenXR Integration",
+    desc: "Ensures your project is future-proof and compatible with multiple VR platforms.",
+    image: "/OpenXRInt.jpg"
   },
+  {
+    name: "Oculus Support",
+    desc: "Optimized for Oculus devices Meta Quest, etc.",
+    image: "/OculusSupport.jpg"
+  },
+  {
+    name: "Hand Animations & Gestures",
+    desc: "Pre-configured hand models with interactive gestures and click support.",
+    image: "/HandGesture.jpg"
+  }
 ];
