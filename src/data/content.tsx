@@ -1,11 +1,3 @@
-export const scope = [
-    "Download the Package:",
-    "Open your Unity project (3D Core)",
-    "Go to Assets > Import Package > Custom Package...",
-    "Select the downloaded .unitypackage and import all assets.",
-    "Start Developing"
-  ];
-
 export const ease = [
   { name: "Drag & Drop Simplicity", desc: "Just download the .unitypackage, drag it into your Unity project, and you’re ready to go—no complex setup required."},
   { name: "No Advanced Knowledge Needed", desc: "Beginners can get started in minutes; all essential VR components are pre-configured."},

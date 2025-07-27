@@ -1,6 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Section from "@/components/Section";
-import { features, scope, ease, roadmapSteps } from "@/data/content";
+import { features, ease, roadmapSteps } from "@/data/content";
 import RoadmapCarousel from "@/components/RoadmapCarousel";
 import React from "react";
 
