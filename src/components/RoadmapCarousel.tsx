@@ -36,21 +36,26 @@ const RoadmapCarousel: React.FC<RoadmapCarouselProps> = ({ steps }) => {
               <button
                 key={index}
                 onClick={() => handleStepClick(index)}
-                className={`w-full text-left p-3 rounded-lg transition-all duration-300 ease-in-out group ${
+                className={`w-full text-left p-3 rounded-lg transition-all duration-500 ease-in-out group relative ${
                   index === currentStep
-                    ? 'bg-violet-500/10 border border-violet-500/20 text-violet-400'
+                    ? 'bg-violet-500/10 text-violet-400'
                     : 'text-gray-300 hover:bg-gray-700/50 hover:text-white'
                 }`}
               >
                 <div className="flex items-center">
-                  <div className={`w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold mr-3 flex-shrink-0 transition-all duration-300 ease-in-out ${
+                  {/* Active border indicator */}
+                  <div className={`absolute left-0 top-0 bottom-0 w-1 bg-violet-500 rounded-r transition-all duration-500 ease-in-out ${
+                    index === currentStep ? 'opacity-100' : 'opacity-0'
+                  }`} />
+                  
+                  <div className={`w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold mr-3 flex-shrink-0 transition-all duration-500 ease-in-out ${
                     index === currentStep
                       ? 'bg-violet-500 text-white'
                       : 'bg-gray-600 text-gray-300 group-hover:bg-gray-500'
                   }`}>
                     {step.step}
                   </div>
-                  <span className="font-medium text-sm transition-colors duration-300 ease-in-out">{step.title}</span>
+                  <span className="font-medium text-sm transition-colors duration-500 ease-in-out">{step.title}</span>
                 </div>
               </button>
             ))}
