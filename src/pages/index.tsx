@@ -18,21 +18,19 @@ export default function Home() {
   return (
     <main className="pt-20 min-h-screen bg-gray-950 text-white" style={backgroundStyle}>
       <Navbar />
-      <section className="flex flex-col items-center justify-center py-20">
-        <h1 className="text-7xl font-bold mb-4 text-center">
+      <section className="flex flex-col items-center justify-center py-12 sm:py-20 px-4 sm:px-6">
+        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 text-center leading-tight">
           <span className="text-violet-400">Metaverse </span>VR Starter Kit
           <br />
-          <span >for Unity</span>
+          <span>for Unity</span>
         </h1>
-        <p className="text-center max-w-xl text-lg">
+        <p className="text-center max-w-xl text-base sm:text-lg px-4">
           Kickstart Your VR Journey in Minutes — Drag, Drop, and Develop for Oculus based VR projects in Unity with ease.
         </p>
         <a
           href="/OculusBase.unitypackage"
           download
-          // className="mt-16 inline-block px-8 py-4 bg-white text-black text-2xl font-bold rounded-lg shadow-lg transition-colors
-          //  hover:bg-gray-400 text-center"
-          className="mt-16 inline-block px-6 py-3 bg-white text-black text-lg font-bold rounded-lg shadow-lg transition-colors hover:bg-violet-200 text-center"
+          className="mt-12 sm:mt-16 inline-block px-6 py-3 bg-white text-black text-base sm:text-lg font-bold rounded-lg shadow-lg transition-colors hover:bg-violet-200 text-center"
         >
           Download Package
         </a>
@@ -41,36 +39,39 @@ export default function Home() {
 
       {/* <div className="bg-gray-900 w-full pt-8 pb-0"> */}
       <Section id="start" title="Getting Started (Quick Start)">
-        <div className="flex flex-col items-center mt-10 gap-0">
+        <div className="flex flex-col items-center mt-6 sm:mt-10 gap-0">
           <RoadmapCarousel steps={roadmapSteps} />
         </div>
       </Section>
 
       <Section id="features" title="Key Features">
-        <div className="mt-10 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="mt-6 sm:mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           {features.map((feature, index) => (
             <div
               key={index}
               className="group relative bg-gray-900 rounded-xl overflow-hidden border border-gray-700 hover:border-gray-600 transition-all duration-300 cursor-pointer"
             >
               {/* Image Container with Zoom Effect */}
-              <div className="relative h-48 overflow-hidden bg-gray-800">
+              <div className="relative h-40 sm:h-48 overflow-hidden bg-gray-800">
                 <img
                   src={feature.image} // Make sure your feature object has an image property
                   alt={feature.name}
                   className="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-110"
                   onError={(e) => {
                     // Fallback for broken images
-                    const target = e.target;`
-                <div class="w-full h-full bg-gray-800 flex items-center justify-center">
-                  <div class="text-center text-gray-500">
-                    <svg class="w-12 h-12 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
-                    </svg>
-                    <p class="text-sm">${feature.name}</p>
-                  </div>
-                </div>
-              `;
+                    const target = e.target as HTMLImageElement;
+                    target.style.display = 'none';
+                    const fallback = document.createElement('div');
+                    fallback.className = 'w-full h-full bg-gray-800 flex items-center justify-center';
+                    fallback.innerHTML = `
+                      <div class="text-center text-gray-500">
+                        <svg class="w-12 h-12 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                        </svg>
+                        <p class="text-sm">${feature.name}</p>
+                      </div>
+                    `;
+                    target.parentElement?.appendChild(fallback);
                   }}
                 />
 
@@ -79,8 +80,8 @@ export default function Home() {
               </div>
 
               {/* Content Section */}
-              <div className="p-6">
-                <h3 className="text-xl font-semibold text-white mb-3 group-hover:text-violet-400 transition-colors duration-300">
+              <div className="p-4 sm:p-6">
+                <h3 className="text-lg sm:text-xl font-semibold text-white mb-2 sm:mb-3 group-hover:text-violet-400 transition-colors duration-300">
                   {feature.name}
                 </h3>
                 <p className="text-gray-400 text-sm leading-relaxed">
@@ -93,27 +94,27 @@ export default function Home() {
       </Section>
       {/* </div> */}
       <Section id="ease" title="How Easy Is It?">
-        <div className="mt-10 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 gap-12 ">
+        <div className="mt-6 sm:mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-12">
           {ease.map((ease) => (
             <div
               key={ease.name}
-              className="bg-gray-900 p-6 rounded-lg hover:scale-104 transition-transform hover:shadow-xl"
+              className="bg-gray-900 p-4 sm:p-6 rounded-lg hover:scale-105 transition-transform hover:shadow-xl"
             >
-              <h3 className="text-xl font-semibold mb-2">{ease.name}</h3>
-              <p className="text-gray-300">{ease.desc}</p>
+              <h3 className="text-lg sm:text-xl font-semibold mb-2">{ease.name}</h3>
+              <p className="text-gray-300 text-sm sm:text-base">{ease.desc}</p>
             </div>
           ))}
         </div>
       </Section>
-      <footer className="mt-20 py-10 bg-gray-900 flex flex-col items-center border-t border-gray-800 w-full">
-        <h2 className="text-2xl font-bold mb-2">Reach Us</h2>
-        <p className="text-gray-400 mb-6 text-center max-w-md">
+      <footer className="mt-16 sm:mt-20 py-8 sm:py-10 bg-gray-900 flex flex-col items-center border-t border-gray-800 w-full px-4 sm:px-6">
+        <h2 className="text-xl sm:text-2xl font-bold mb-2">Reach Us</h2>
+        <p className="text-gray-400 mb-6 text-center max-w-md text-sm sm:text-base">
           Have questions, feedback, or need support? We are here to help! Connect with us anytime.
         </p>
-        <div className="flex space-x-8">
+        <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-8">
           <a
             href="mailto:deeptanshushuklaji@email.com"
-            className="flex items-center text-violet-400 hover:underline text-lg"
+            className="flex items-center justify-center text-violet-400 hover:underline text-base sm:text-lg"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -124,7 +125,7 @@ export default function Home() {
           </a>
           <a
             href="https://twitter.com/potatomiooo"
-            className="flex items-center text-violet-400 hover:underline text-lg"
+            className="flex items-center justify-center text-violet-400 hover:underline text-base sm:text-lg"
             target="_blank"
             rel="noopener noreferrer"
           >
