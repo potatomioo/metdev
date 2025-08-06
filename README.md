@@ -29,7 +29,7 @@ A plug-and-play Unity package that simplifies VR development for **Oculus Quest*
 ## Unity Setup (How to Use)
 
 1. Download the `.unitypackage` from the web app:  
-   👉 [https://metaverse-vr-starter.vercel.app](https://metaverse-vr-starter.vercel.app)
+   👉 [https://metaverse-vr-starter.vercel.app](https://unity-vr-starterkit.vercel.app)
 
 2. Open your Unity project and import XR Interaction Toolkit.
 
